@@ -1,7 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-// Caracteres especiais: / | \ •
-
-// ENTRADAS E SAÍDAS =========================================
+﻿// ENTRADAS E SAÍDAS =========================================
 string nome = "Nome Padrão";
 int idade = 32;
 char genero = 'M';
