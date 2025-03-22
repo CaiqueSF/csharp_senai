@@ -1,5 +1,4 @@
-﻿// Caracteres especiais: / | \ •
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using static System.Runtime.InteropServices.JavaScript.JSType;
 using System;
 using static System.Net.Mime.MediaTypeNames;
 using System.Text.RegularExpressions;
@@ -56,6 +55,7 @@ Console.WriteLine($"{num5} - {num6} = {num5 * num6}");
 Console.WriteLine("");
 */
 
+
 // Escreva um programa que recebe três números e imprime a média aritmética deles.
 /*
 using System.Linq;
@@ -80,13 +80,69 @@ Console.WriteLine($"Média dos números = {lista}");
 Console.WriteLine("");
 */
 
+
 // Escreva um programa que recebe dois números e imprime o resto da divisão do primeiro pelo segundo.
+/*
+int num1, num2;
+
+Console.Write("Entre com o Primeiro número Inteiro: ");
+num1 = int.Parse(Console.ReadLine());
+
+Console.Write("Entre com o Segundo número Inteiro: ");
+num2 = int.Parse(Console.ReadLine());
+
+Console.WriteLine($"O resto da divisão: {num1} % {num2} = {num1 % num2}");
+*/
+
 
 // Escreva um programa que troca os valores de duas variáveis sem usar variável auxiliar.
+/*
+float a, b;
+
+Console.Write("Entre com o valor de 'a': ");
+a = float.Parse(Console.ReadLine());
+Console.Write("Entre com o  de 'b': ");
+b = float.Parse(Console.ReadLine());
+
+a = b;
+b = a;
+Console.WriteLine($"\nDepois da troca: 'a = {a}' e 'b = {b}'");
+*/
+
 
 // Escreva um programa que recebe um número e imprime `1` se for par e `0` se for ímpar.
+/*
+int numero;
+
+Console.Write("Entre com um número INTEIRO: ");
+numero = Convert.ToInt32(Console.ReadLine());
+
+if (numero % 2 == 0) {
+    Console.WriteLine("1");
+}
+else {
+    Console.WriteLine("0");
+}
+*/
+
 
 // Escreva um programa que recebe três números e imprime o maior deles sem utilizar if/else ou laços de repetição.
+/*
+float num1, num2, num3, maior;
+
+Console.Write("Entre com o Primeiro número: ");
+num1 = float.Parse(Console.ReadLine());
+Console.Write("Entre com o Segundo número: ");
+num2 = float.Parse(Console.ReadLine());
+Console.Write("Entre com o Terceiro número: ");
+num3 = float.Parse(Console.ReadLine());
+
+maior = Math.Max(num1, Math.Max(num2, num3));
+Console.WriteLine($"O maior número é: {maior}");
+*/
+
+
+
 
 
 // ATIVIDADES 2 =========================================================================
@@ -191,10 +247,10 @@ float num1, num2;
 char operacao;
 
 Console.Write("Entre com o primeiro número: ");
-num1 = Convert.ToInt32(Console.ReadLine());
+num1 = float.Parse(Console.ReadLine());
 
 Console.Write("Entre com o segundo número: ");
-num2 = Convert.ToInt32(Console.ReadLine());
+num2 = float.Parse(Console.ReadLine());
 
 Console.Write("Qual operação deseja executar? (soma: + | Subtração: - | Multiplicação: * | Divisão: /): ");
 operacao = Convert.ToChar(Console.ReadLine());
@@ -220,33 +276,61 @@ switch (operacao) {
 
 
 // 7. Crie um programa que recebe um ano e verifica se ele é bissexto.
-// • Se o ano não termina em 00, ele é bissexto se for divisível por 4. 
-// • Todos os anos múltiplos de 400 são bissextos, exceto se forem múltiplos de 100, mas não de 400. 
-
+// • Um ano é bissexto se for divisível por 400.
+// • Um ano NÃO é bissexto se for divisível por 100, mas não por 400.
+// • Um ano é bissexto se for divisível por 4, mas não por 100.
+/*
 int ano, bissexto;
 
 Console.Write("Entre com um ano qualquer (exemplo: 2025): ");
 ano = Convert.ToInt32(Console.ReadLine());
 
-if (ano / 100 != 00 && ano % 4 == 0) {
+if ((ano % 400 == 0) || (ano % 4 == 0 && ano % 100 != 0)) {
     Console.WriteLine($"{ano} É um ano bissexto");
 }
 else {
     Console.WriteLine($"{ano} NÃO É um ano bissexto!");
 }
+*/
 
 
+// 8. Receba três valores numéricos e verifique se eles podem formar um triângulo.
+// • Caso possam, determine se ele é equilátero, isósceles ou escaleno.
+// • A soma de dois lados deve ser sempre maior que o terceiro lado.
+// • Equilátero → Todos os três lados são iguais
+// • Isósceles → Dois lados são iguais e um diferente
+// • Escaleno → Todos os três lados são diferentes
+/*
+Console.Write("Entre com o Primeiro lado do triângulo: ");
+float l1 = float.Parse(Console.ReadLine());
 
+Console.Write("Entre com o Segundo lado do triângulo: ");
+float l2 = float.Parse(Console.ReadLine());
 
+Console.Write("Entre com o Terceiro lado do triângulo: ");
+float l3 = float.Parse(Console.ReadLine());
 
-//  • https://learn.microsoft.com/pt-br/office/troubleshoot/excel/determine-a-leap-year
+if (l1 + l2 > l3 && l1 + l3 > l2 && l2 + l3 > l1)
+{
 
+    if (l1 == l2 && l2 == l3)
+    {
+        Console.WriteLine("Os lados informados formam um triângulo EQUILÁTERO!");
+    }
+    else if (l1 == l2 || l1 == l3 || l2 == l3)
+    {
+        Console.WriteLine("Os lados informados formam um triângulo ISÓSCELES!");
+    }
+    else
+    {
+        Console.WriteLine("Os lados informados formam um triângulo ESCALENO!");
+    }
+}
 
-// • Qualquer ano que seja uniformemente divisível por 4 é um ano bissexto: por exemplo, 1988, 1992 e 1996 são anos bissextos.
-// • No entanto, ainda há um pequeno erro que deve ser contabilizado. Para eliminar esse erro, o calendário gregoriano estipula que um ano que é uniformemente divisível por 100 (por exemplo, 1900) é um ano bissexto apenas se também é igualmente divisível por 400.
-
-
-// 8. Receba três valores numéricos e verifique se eles podem formar um triângulo. Caso possam, determine se ele é equilátero, isósceles ou escaleno.
+else {
+    Console.WriteLine("Os lados informados NÃO formam um triângulo!");
+}
+*/
 
 
 // 9. Receba uma nota e classifique-a conforme a seguinte tabela:
@@ -255,3 +339,28 @@ else {
 // • C * *(70 - 79)
 // • D * *(60 - 69)
 // • F * *(menor que 60)
+
+float nota;
+
+Console.Write("Entre com a nota do aluno: ");
+nota = float.Parse(Console.ReadLine());
+
+if(nota < 60) {
+    Console.WriteLine("Nota F");
+}
+else if (nota >= 60 && nota < 70) {
+    Console.WriteLine("Nota D");
+}
+else if (nota >= 70 && nota < 80) {
+    Console.WriteLine("Nota C");
+}
+else if (nota >= 80 && nota < 90) {
+    Console.WriteLine("Nota B");
+}
+else {
+    Console.WriteLine("Nota A");
+}
+
+
+
+Console.ReadKey();
