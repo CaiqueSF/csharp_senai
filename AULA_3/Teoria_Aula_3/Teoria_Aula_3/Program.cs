@@ -82,20 +82,4 @@ foreach (char i in nome1.Reverse()) {
     Console.WriteLine(i);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Console.ReadKey();
