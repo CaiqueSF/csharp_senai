@@ -26,31 +26,94 @@ Projeto: Assistente Pessoal de Tarefas
 • Crie uma funcionalidade para que o usuário possa modificar o nome de uma tarefa já existente.
 */
 
+List<string> lista_tarefas = new List<string> {};
+List<string> lista_tarefa_concluidas = new List<string> {};
+List<string> deletar_tarefa = new List<string> {};
 
+void listar_tarefas() {
+    if (lista_tarefas.Count == 0){
+        Console.WriteLine($"\nSUA LISTA DE TAREFAS ESTÁ VAZIA!");
+    }
+    else {
+        Console.WriteLine("\nLISTA DE TAREFAS ATUAL:");
+        for (int i = 0; i < lista_tarefas.Count; i++)
+        {
+            Console.Write($"{i + 1}. {lista_tarefas[i]}\n");
+        }
+    }
+}
 
-//static void add_tarefa() {
+void listar_tarefas_concluidas() {
+    if (lista_tarefa_concluidas.Count == 0) {
+        Console.WriteLine($"\nSUA LISTA DE TAREFAS CONCLUÍDAS ESTÁ VAZIA!");
+    }
+    else {
+        Console.WriteLine("\nTAREFAS CONCLUÍDAS:");
+        for (int i = 0; i < lista_tarefa_concluidas.Count; i++) {
+            Console.Write($"{i + 1}. {lista_tarefa_concluidas[i]}\n");
+        }
+    }
+}
 
-//}
-//static void tarefas_pend() {
+void add_tarefa() {
+    Console.Write("\nEscreva brevemente o título da sua tarefa: ");
+    lista_tarefas.Add(Console.ReadLine());
 
-//}
-//static void tarefas_concluídas() {
+    Console.WriteLine("\nTAREFA ADICIONADA COM SUCESSO:");
+    listar_tarefas();
+}
 
-//}
+void tarefas_pendentes() {
+    List<string> list_tarefas_pendentes = lista_tarefas.Except(lista_tarefa_concluidas).ToList();
+
+    if (list_tarefas_pendentes.Count == 0) {
+        Console.WriteLine($"\nPARABÉNS, VOCÊ NÃO TEM TAREFAS PENDENTES!");
+    }
+
+    else {
+        Console.WriteLine("\nTAREFAS PENDENTES:");
+        for (int i = 0; i < list_tarefas_pendentes.Count; i++) {
+            Console.Write($"{i + 1}. {list_tarefas_pendentes[i]}\n");
+        }
+    }
+}
+
+void tarefas_concluidas() {
+    listar_tarefas_concluidas();
+    Console.Write("\nDeseja concluir alguma tarefa? ('s' para sim | 'n' para não): ");
+    char conclui = char.Parse(Console.ReadLine());
+
+    if (conclui == 's' && lista_tarefas.Count >= 1) {
+        Console.Write("\nDigite o número da tarefa que deseja concluir: ");
+        int num_tarefa = int.Parse(Console.ReadLine());
+
+        lista_tarefa_concluidas.Add(lista_tarefas[num_tarefa - 1]);
+        Console.WriteLine("\nTAREFA CONCLUÍDA COM SUCESSO:");
+        listar_tarefas_concluidas();
+    }
+
+    else if (conclui != 's' && lista_tarefas.Count >= 1) {
+        listar_tarefas_concluidas();
+    }
+
+    else {
+        listar_tarefas();
+    }
+}
+
 //static void del_tarefa() {
 
 //}
 
-
-
-static int Menu() {
+static int menu() {
     while (true) {
         Console.Write(@"Escolha o número correspondete a sua opção:
-            1. Adicionar Nova Tarefa;
-            2. Listar Tarefas Pendentes;
-            3. Listar Tarefas Concluídas;
-            4. Excluir Tarefa;
-            5. Sair do Menu.
+            1. Listar todas as tarefas;
+            2. Adicionar Nova Tarefa;
+            3. Listar Tarefas Pendentes;
+            4. Adicionar/Listar Tarefas Concluídas;
+            5. Excluir Tarefa;
+            6. Sair do Menu.
         ");
         Console.WriteLine();
 
@@ -65,37 +128,37 @@ static int Menu() {
     }
 }
 
-int menu = Menu();
+int tarefa_menu = menu(); // Instanciando a função menu
 
-while (menu != 5)
-{
+while (tarefa_menu != 5) {
 
-    switch (menu) {
+    switch (tarefa_menu) {
         case 1:
-            Console.WriteLine("\nChama função: Adicionar Nova Tarefa");
+            listar_tarefas();
             break;
         case 2:
-            Console.WriteLine("\nChama função: Listar Tarefas Pendentes");
+            add_tarefa();
             break;
         case 3:
-            Console.WriteLine("\nChama função: Listar Tarefas Concluídas");
+            tarefas_pendentes();
             break;
         case 4:
-            Console.WriteLine("\nChama função: Excluir Tarefa");
+            tarefas_concluidas();
             break;
         case 5:
-            Console.WriteLine("\nChama função: Sair do Menu");
+            Console.WriteLine("\nChama função: Excluir Tarefa");
             break;
         default:
-            Console.WriteLine("\OPÇÃO Inválida!");
+            Console.WriteLine("\nOPÇÃO Inválida!");
             break;
     }
 
     Console.WriteLine();
-    menu = Menu();
+    tarefa_menu = menu();
 }
 
-Console.WriteLine("\nVocê está saindo da sua TaskList, até breve!");
+Console.WriteLine("\nVocê está saindo da sua lista de tarefas, até breve!");
+
 
 
 
