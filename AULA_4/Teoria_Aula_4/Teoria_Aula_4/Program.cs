@@ -43,7 +43,7 @@ cat.miar();
 */
 
 // POLIMORFISMO = = = = = = = = = = = = = = = = = = = = = = = = 
-/*
+
 Veiculo minhaMoto = new Veiculo();
 minhaMoto.Mover();
 
@@ -52,7 +52,7 @@ meuCarro.Mover();
 
 Veiculo meuAviao = new Aviao();
 meuAviao.Mover();
-*/
+
 
 // ABSTRAÇÃO = = = = = = = = = = = = = = = = = = = = = = = = 
 
