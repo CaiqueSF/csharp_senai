@@ -94,6 +94,7 @@
 - Links:
 - https://dontpad.com/aula2.22.03
 - https://humorous-troodon-d7b.notion.site/Dicion-rio-do-Programador-1b705966d65680a69f21dca8d2c9b7c1
+- dotnet restore: baixar e instalar todas as dependências NuGet
 
 ## ➡ Contatos
 

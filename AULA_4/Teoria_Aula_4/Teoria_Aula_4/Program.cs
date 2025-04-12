@@ -26,7 +26,7 @@ suaConta.Sacar(15);
 */
 
 // HERANÇA = = = = = = = = = = = = = = = = = = = = = = = = 
-
+/*
 Cachorro dog = new Cachorro();
 dog.nome = "HUSKY";
 dog.respirar();
@@ -40,6 +40,21 @@ cat.nome = "PERSIAN";
 cat.respirar();
 Console.WriteLine();
 cat.miar();
+*/
+
+// POLIMORFISMO = = = = = = = = = = = = = = = = = = = = = = = = 
+/*
+Veiculo minhaMoto = new Veiculo();
+minhaMoto.Mover();
+
+Veiculo meuCarro = new Carro();
+meuCarro.Mover();
+
+Veiculo meuAviao = new Aviao();
+meuAviao.Mover();
+*/
+
+// ABSTRAÇÃO = = = = = = = = = = = = = = = = = = = = = = = = 
 
 
 
