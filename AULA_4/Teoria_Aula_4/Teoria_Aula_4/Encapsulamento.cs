@@ -1,4 +1,7 @@
-﻿
+﻿// Encapsulamento significa esconder os detalhes internos de um objeto e controlar o acesso a eles. 
+// Usamos modificadores de acesso como private, public e protected.
+
+
 public class ContaBancaria {
 
     private double saldo;

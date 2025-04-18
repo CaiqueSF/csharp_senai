@@ -56,35 +56,15 @@ meuAviao.Mover();
 
 // ABSTRAÇÃO = = = = = = = = = = = = = = = = = = = = = = = = 
 
+IVeiculo veiculo1 = new CarroSUV();
+veiculo1.Mover();
+
+IVeiculo veiculo2 = new Bicicleta();
+veiculo2.Mover();
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Console.ReadKey();
+// Para o terminal não fechar sozinho
+Console.ReadLine();

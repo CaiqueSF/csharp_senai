@@ -1,7 +1,6 @@
-﻿//Polimorfismo permite que um mesmo método tenha diferentes comportamentos, 
-//dependendo da classe que o implementa.
+﻿// Polimorfismo permite que um mesmo método tenha diferentes comportamentos, 
+// dependendo da classe que o implementa.
 
-using System;
 
 public class Veiculo {
 	public virtual void Mover() {
@@ -22,4 +21,3 @@ public class Aviao : Veiculo {
         Console.WriteLine("O avião está voando.");
     }
 }
-
