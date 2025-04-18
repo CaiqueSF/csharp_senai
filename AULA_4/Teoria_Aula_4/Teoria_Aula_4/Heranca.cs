@@ -1,4 +1,8 @@
-﻿public class Animal {
+﻿// Herança permite que uma classe herde características de outra.
+// Isso evita repetição de código.
+
+
+public class Animal {
 
 	public string nome;
 
