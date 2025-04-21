@@ -10,7 +10,7 @@ interface IVeiculo {
 // Implementação do contrato na classe CarroSUV
 public class CarroSUV : IVeiculo {
 	public void Mover() {
-        Console.WriteLine("Seu carro é SUV  e está na promoção.");
+        Console.WriteLine("Seu carro é SUV e está na promoção.");
     }
 }
 
