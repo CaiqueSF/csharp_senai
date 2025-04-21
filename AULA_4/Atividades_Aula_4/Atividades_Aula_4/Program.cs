@@ -207,11 +207,11 @@ class Program {
 */
 
 class Calculadora {
-    static public string somar(double a, double b) {
+    public static string somar(double a, double b) {
         return $"MÉTODO SOMA: {a} + {b} = {a + b}\n";
     }
 
-    static public string multiplicar(double a, double b) {
+    public static string multiplicar(double a, double b) {
         return $"MÉTODO MULTIPLICAÇÃO: {a} * {b} = {a * b}";
     }
 }
