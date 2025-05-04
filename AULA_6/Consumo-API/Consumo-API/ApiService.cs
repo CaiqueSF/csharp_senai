@@ -17,9 +17,6 @@ namespace ApiServiceClass {
 
             // Define formato de resposta como JSON
             _client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-            // Adiciona token de autenticação no cabeçalho Authorization
-            //_client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", "3544904554b8e6e97db07f31ef72e74300dec8604a20a0b8bf35dc0ade385532");
         }
 
 
